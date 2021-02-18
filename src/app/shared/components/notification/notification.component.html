@@ -1,0 +1,12 @@
+<a
+  href="#"
+  class="card btn"
+  [class.bg-info]="!notification.read"
+  [class.bg-light]="notification.read"
+  style="width: 18rem;"
+>
+  <div class="card-body">
+    <h5 class="card-title">{{ notification.message }}</h5>
+    <p class="card-text">{{ notification.date }}</p>
+  </div>
+</a>

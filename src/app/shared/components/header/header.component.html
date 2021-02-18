@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <ul ngbNav class="nav-pills sticky-top">
+    <li class="ml-auto">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >Notifications</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <notification
+            *ngFor="let notification of user?.notifications"
+            [notification]="notification"
+          ></notification>
+        </div>
+      </div>
+    </li>
+
+    <li ngbNavItem class="ml-2" *ngIf="user">
+      <div ngbDropdown class="d-inline-block">
+        <button
+          class="btn btn-outline-primary"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >Profile</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem class="display-name">{{ user.displayName }}</button>
+          <button ngbDropdownItem class="email">{{ user.email }}</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
